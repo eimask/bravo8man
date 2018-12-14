@@ -1,0 +1,22 @@
+{% extends '_layout.' + getConfig('viewExtension') %}
+
+{% block cssExtends %}
+    <link rel="stylesheet" href="/frontend/bravo/assets/css/B8Help/Home.css" />
+    <link rel="stylesheet" href="/frontend/bravo/assets/css/B8Help/Navigator.css" />
+{% endblock %}
+
+{% block content %}
+<div id="header">
+    <b>Kết quả tìm kiếm</b>
+</div>
+<hr/>
+    <div  id="content">
+    {%  for list in document  %}
+        <div><a style="color:blue;" href="/document/{{ list.Id }}/{{ list.Alias }}">{{ list.Title }}</a></div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block jsExtends %}
+    <script type="text/javascript" src="/frontend/bravo/assets/js/HelpJavascript/Home.js"></script>
+{% endblock %}

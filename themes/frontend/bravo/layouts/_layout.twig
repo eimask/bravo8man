@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block headExtends %}
+        <title>Bravo Help</title>
+    {% endblock %}
+
+    <link href="/frontend/bravo/assets/css/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/frontend/bravo/assets/css/B8Help/_Layout.css"/>
+    <link rel="icon" type="image/svg+xml" href="/frontend/bravo/assets/images/bravo-favicon.png">
+    <link href="/frontend/bravo/assets/css/reset.css" rel="stylesheet" />
+    <link href="/frontend/bravo/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/frontend/bravo/assets/css/bravostyle.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/frontend/bravo/assets/css/B8Help/LoadingStyle.css" />
+
+    {% block cssExtends %}
+        <link rel="stylesheet" href="/frontend/bravo/assets/css/B8Help/Home.css" />
+        <link rel="stylesheet" href="/frontend/bravo/assets/css/B8Help/Navigator.css" />
+    {% endblock %}
+</head>
+<body style="margin:0; padding:0; height:100%;">
+
+<div class="site-container">
+    <div class="site-pusher">
+        <header>
+            <div class="br-header">
+                <img alt="bravo-header" src="/frontend/bravo/assets/images/bg-header.svg" style="height:70px;" />
+            </div>
+
+            <div class="container">
+                <div id="narbar">
+                    <ul class="nav navbar-nav" style="display:inline-block;">
+                        <li>
+                            <a hreflang="vi" class="br-header-logo" href="https://www.bravo.com.vn/">
+                                <img alt="Bravo Logo VN" src="/frontend/bravo/assets/images/logo_vn.svg" />
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="row" style="display: inline-block; float:right;">
+                        <div class="col-md-12">
+                            <div class="social-icons">
+                                <a hreflang="vi" href="https://vi-vn.facebook.com/BRAVOSOFTWARE" title="Facebook Bravo" class="facebook" target="_blank"> </a>
+                                <a hreflang="vi" href="https://www.youtube.com/channel/UCFWsDdDkNA63T5kO-p07IkQ" title="Youtube Bravo" class="youtube" target="_blank"> </a>
+                                <a hreflang="vi" href="https://plus.google.com/101254773549524016343" title="Google Bravo" class="google" target="_blank"> </a>
+                            </div><!-- **Social icons** -->
+
+                            <form method="get" action="/document/search" id="searchform">
+                                <fieldset>
+                                    <input type="text" name="searchStr" class="form-control" placeholder="Tìm kiếm">
+                                    <input name="submit" type="submit" value="" />
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="main_content" style="margin-top:10px;">
+        <table style="width: 100%;">
+            <tr>
+                <td id="tdNav" style="width:400px; vertical-align:top;word-wrap:break-word;">
+                    <div id="Navigator" style="border:1px solid #11948A; border-radius: 35px;
+                word-wrap:break-word; margin-top:0px; height:100%; margin-left:25px; width:250px">
+                        <div class="tree-helper" style="padding-left:15px; padding-right:15px;height:100%; word-break:break-word;">
+                            <br />
+                            <p style="color:#11948A; font-size:14px;text-align:center;"><b>Mục lục</b></p>
+                            <hr style="border-top: 2px solid #000000" />
+
+                            {{ getFrontendMenu("side-bar") | async | safe }}
+                        </div>
+                    </div>
+                </td>
+                <td id="splitter" style="width:10px; vertical-align:central;cursor:w-resize;"></td>
+                <td id="tdMainContent" style="vertical-align:top; width:100%">
+                    <div id="Main_Content" style="margin-right:5px;margin-left:5px; width:100%;">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% block jsExtends %}
+    <script type="text/javascript" src="/frontend/bravo/assets/js/HelpJavascript/Home.js"></script>
+{% endblock %}
+
+<script src="/frontend/bravo/assets/js/HelpJavascript/Home.js" type="text/javascript"></script>
+<script src="/frontend/bravo/assets/js/js/jquery-1.12.3.min.js" type="text/javascript"></script>
+<script src="/frontend/bravo/assets/js/js/bootstrap.min.js" type="text/javascript"></script>
+
+</body>
+</html>

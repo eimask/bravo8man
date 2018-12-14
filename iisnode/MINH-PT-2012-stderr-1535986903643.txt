@@ -1,0 +1,4 @@
+[31merror[39m: Could not connect to redis server. ArrowJS used fakeredis
+Mon, 03 Sep 2018 15:01:47 GMT tedious deprecated Passing non-number values for options.port will throw an error in future tedious versions. Please pass a number instead. at node_modules\mssql\lib\tedious.js:212:23
+Mon, 03 Sep 2018 15:01:48 GMT tedious deprecated The default value for `options.encrypt` will change from `false` to `true`. Please pass `false` explicitly if you want to retain current behaviour. at node_modules\sequelize\lib\dialects\mssql\connection-manager.js:68:22
+Mon, 03 Sep 2018 15:01:48 GMT tedious deprecated Passing non-number values for options.port will throw an error in future tedious versions. Please pass a number instead. at node_modules\sequelize\lib\dialects\mssql\connection-manager.js:68:22

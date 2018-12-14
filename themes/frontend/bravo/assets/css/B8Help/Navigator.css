@@ -1,0 +1,27 @@
+﻿ul{
+    list-style-type: none;
+}
+
+li{
+    word-wrap:break-word;
+    padding-left:10px
+}
+
+.header-icon{
+    color: #FFE793; 
+    cursor:zoom-in;
+}
+
+.tree-Header{
+    margin-left:10px;
+     font-size:12px
+}
+
+.tree-icon{
+    color: #cccccc;
+}
+
+.tree-content{
+    margin-left:5px;
+    font-size:12px
+}

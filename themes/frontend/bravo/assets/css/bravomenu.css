@@ -1,0 +1,120 @@
+﻿@media only screen and (min-width: 768px) and (max-width: 989px){
+    .dropdown-menu .fa-angle-right{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .site-container, .site-pusher{
+        height: 100%;
+    }
+
+    .site-container{
+        overflow: hidden;
+    }
+
+    .navbar-nav > li > a{
+        line-height: none !important;
+    }
+
+    .br-footer-icon{
+        display: none;
+    }
+
+    .navbar-nav {
+        margin: 0px;
+    }
+
+    .bravo_menu {
+        background: #00a88d;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translateX(-250px);
+        -webkit-transform: translateX(-250px);
+        width: 250px;
+    }
+
+    .bravo_menu a{
+        display: block;
+        height: 40px;
+        text-align: left;
+        line-height: 40px !important;
+        border-bottom: 1px dotted #f6f6f6;
+        font-weight:normal;
+        padding-left: 10px !important;
+    }
+
+    .bravo_menu a:hover{
+        border-bottom: 1px dotted #f6f6f6;
+    }
+
+    .bravo_menu a:first-child{
+        padding:0;
+    }
+
+    .with--sidebar .site-pusher {
+        -webkit-transform: translateX(250px);
+        transform: translateX(250px);
+    }
+
+    .with--sidebar .site-cache {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .fa-angle-down{
+        position: absolute;
+        top: 8px;
+        right:10px;
+        font-size: 22px;
+    }
+
+    .bravo-nav .navbar-nav .open .dropdown-menu > li > a{
+        padding: 0px;
+    }
+
+    .bravo-nav .nav > li > ul > li a{
+        color: #fbaf3f
+    }
+
+    .bravo-nav .nav > li > a:hover{
+        color: #fbaf3f;
+    }
+
+    .bravo-nav .navbar-nav > li > .dropdown-menu{
+        opacity: 0.9;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .fa-home::before{
+		content: " ";
+	}
+
+	.header__btn{
+		padding:15px 0;
+		line-height: 10px;
+	}
+
+    .header__logo{
+        padding: 15px 0;
+    }
+
+    .br-menu-logo {
+        width: 150px;
+        height: 34px;
+        background: url(../images/logo-white.svg) no-repeat;
+        background-size: 85%;
+        display: block;
+    }
+
+    .br-footer-icon{
+        display: none;
+    }
+}

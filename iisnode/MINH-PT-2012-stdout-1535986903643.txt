@@ -1,0 +1,31 @@
+[32minfo[39m: Arrow loaded: 'feature' - 'menu'
+[32minfo[39m: Arrow loaded: 'feature' - 'blog'
+[32minfo[39m: Arrow loaded: 'feature' - 'configuration'
+[32minfo[39m: Arrow loaded: 'feature' - 'dashboard'
+[32minfo[39m: Arrow loaded: 'feature' - 'login'
+[32minfo[39m: Arrow loaded: 'feature' - 'category'
+[32minfo[39m: Arrow loaded: 'feature' - 'plugins'
+[32minfo[39m: Arrow loaded: 'feature' - 'roles'
+[32minfo[39m: Arrow loaded: 'feature' - 'upload'
+[32minfo[39m: Arrow loaded: 'feature' - 'users'
+[32minfo[39m: Arrow loaded: 'feature' - 'widgets'
+[32minfo[39m: Arrow loaded: 'widget' - 'categories'
+[32minfo[39m: Arrow loaded: 'widget' - 'custom_html'
+[32minfo[39m: Arrow loaded: 'widget' - 'facebook_comments'
+[32minfo[39m: Arrow loaded: 'widget' - 'facebook_like'
+[32minfo[39m: Arrow loaded: 'widget' - 'facebook_share'
+[32minfo[39m: Arrow loaded: 'widget' - 'menus'
+[32minfo[39m: Arrow loaded: 'widget' - 'picked_posts'
+[32minfo[39m: Arrow loaded: 'widget' - 'recent_posts'
+[32minfo[39m: Arrow loaded: 'widget' - 'search'
+[32minfo[39m: Arrow loaded: 'plugin' - 'facebook'
+[32minfo[39m: Arrow loaded: 'plugin' - 'google_analytics'
+[32minfo[39m: Arrow loaded: 'plugin' - 'seo'
+[32minfo[39m: Application loaded using the "development" environment configuration
+[32minfo[39m: Application started on port \\.\pipe\d8cba9d7-fe1d-46e0-9dde-75c22d4303bd , Process ID: 2012
+[0mGET / [32m200 [0m537.651 ms - 11578[0m
+[0mGET /admin [36m302 [0m69.568 ms - 68[0m
+[0mGET /admin/login [32m200 [0m66.999 ms - 3103[0m
+[0mPOST /admin/login [36m302 [0m435.534 ms - 56[0m
+[0mGET /admin [32m200 [0m564.991 ms - 16048[0m
+[0mGET / [36m304 [0m442.990 ms - -[0m

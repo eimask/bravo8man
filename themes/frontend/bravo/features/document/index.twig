@@ -1,0 +1,17 @@
+{% extends '_layout.' + getConfig('viewExtension') %}
+
+{% block content %}
+    {%  if (document)  %}
+        <div id="header">
+            <b>
+                {{ document.Title }}
+            </b>
+        </div>
+        <hr/>
+        <div  id="content">
+            {{ document.Content | safe }}
+        </div>
+    {% else %}
+        <div id="header"><b>Giới thiệu về Công ty Cổ phần Phần mềm BRAVO</b></div>
+    {% endif %}
+{% endblock %}

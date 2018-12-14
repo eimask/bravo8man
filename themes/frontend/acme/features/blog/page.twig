@@ -1,0 +1,140 @@
+{% extends '_layout.' + getConfig('viewExtension') %}
+
+{% block headExtends %}
+    {{ getPlugin('page_' + item.id, 'head_tag', null) | async | default_seo_value(item.title, 'Bootstrap 3, Template, Theme, Responsive, Corporate, Business', 'Free Responsive Corporate Template') | safe }}
+    {{ getPlugin('facebook', 'head_tag', {url: url, fb_share_type: 'article', fb_share_image: item.image, fb_share_description: item.intro_text }) | async | safe }}
+{% endblock %}
+
+{% block content %}
+
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>{{ item.title }}</h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="active">{{ item.title }}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--container start-->
+    <div class="container">
+
+        <div class="row">
+
+            <!--blog start-->
+            <div class="col-lg-9">
+                <div class="blog-item">
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2">
+                            <div class="date-wrap">
+                              <span class="date">
+                                11
+                              </span>
+                              <span class="month">
+                                January
+                              </span>
+                            </div>
+
+                        </div>
+                        {% if item.image %}
+                            <div class="col-lg-10 col-sm-10">
+                                <div class="blog-img gs">
+                                    <img src="{{ item.image }}" alt=""/>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2 text-right">
+                            <div class="author">
+                                By
+                                <a href="#">
+                                    Admin
+                                </a>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="javascript:;">
+                                        <em>
+                                            travel
+                                        </em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <em>
+                                            tour
+                                        </em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <em>
+                                            recreation
+                                        </em>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <em>
+                                            tourism
+                                        </em>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="st-view">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="javascript:;">
+                                            209 View
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            23 Share
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            23 comments
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- noi dung bai viet -->
+
+                        <div class="col-lg-10 col-sm-10">
+                            <h1>
+                                <a href="#">
+                                    {{ item.title |safe }}
+                                </a>
+                            </h1>
+
+                            <p>{{ item.full_text |safe }}</p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

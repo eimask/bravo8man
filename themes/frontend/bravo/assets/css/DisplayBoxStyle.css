@@ -1,0 +1,68 @@
+﻿
+.box {
+}
+
+    .box-header {
+    border: none;
+    padding-top: 5px;
+    border-bottom: 1px solid #DEDEDE;
+    border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    height: 12px;
+    min-height: 12px;
+    margin-bottom: 0;
+    cursor: move;
+    font-weight: bold;
+    font-size: 16px;
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(0,0,0,0.1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1a000000',GradientType=0 );
+}
+
+    /*.box table {
+        color: #333;
+        padding: 10px;
+    }*/
+
+.box {
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+}
+
+/*table {
+    border-collapse: collapse;
+    margin-top: 5px;
+}*/
+
+/*table, th, td {
+    border: 1px solid #11948a;
+}*/
+
+table {
+    border-collapse: collapse;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+th, td {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+th{
+    height:50px;
+    background-color: #e6e6e6;
+}
+
+#searcher {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+

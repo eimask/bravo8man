@@ -1,0 +1,77 @@
+﻿@media only screen and (max-width:600px){
+    #Main_Content img:not(.bravo_image_icon){
+        width:350px !important;
+        height:auto !important;
+        margin-left: 0px !important;
+    }
+
+    #Main_Content table{
+        width:100% !important;
+        height:auto !important;
+        margin-left: 0px !important;
+    }
+}
+
+
+@media only screen and (min-width:600px)
+{
+    #Main_Content img:not(.bravo_image_icon){
+        width:200px !important;
+        height:auto !important;
+        margin-left: 0px !important;
+    }
+
+    #Main_Content table{
+        width:100% !important;
+        height:auto !important;
+        margin-left: 0px !important;
+    }
+}
+
+@media only screen and (min-width:768px)
+{
+    #Main_Content img:not(.bravo_image_icon){
+         width:400px !important;
+        height:auto !important;
+        margin-left: 0px !important;
+    }
+
+    #Main_Content table{
+         width:100% !important;
+        margin-left: 0px !important;
+    }
+}
+
+@media only screen and (min-width:992px)
+{
+    #Main_Content img:not(.bravo_image_icon){
+         width:500px !important;
+        height:auto !important;
+        margin-left: 0px !important;
+    }
+
+    #Main_Content table{
+        width:100% !important;
+        height:auto !important;
+        margin-left: 0px !important;
+    }
+}
+
+#header{
+    color:#119489 !important;
+    font-size:28px !important;
+    padding-left:5px !important;
+}
+
+hr{
+    border-top: 2px solid #000000 !important;
+}
+
+#content {
+    padding-left:5px !important;
+    padding-right:5px !important;
+    padding-top:5px !important;  
+    overflow:auto !important; 
+    height:auto !important;
+}
+

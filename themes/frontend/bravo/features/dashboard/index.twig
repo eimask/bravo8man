@@ -1,0 +1,15 @@
+{% extends '_layout.' + getConfig('viewExtension') %}
+
+
+{% block content %}
+
+    <script>
+        var param = RegExp('commandKey=' + '(.+?)(&|$)').exec(location.search) || null;
+        var _c = (param === null ? '' : decodeURI(param[1]));
+
+        if (_c != undefined && _c != '' && _c != null){
+            window.location.replace('http://localhost:8000/document/?commandKey=' + _c);
+        };
+    </script>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends '_layout.' + getConfig('viewExtension') %}
+
+{% block headExtends %}
+    {{ getPlugin('post_' + post.id, 'head_tag', null) | async | default_seo_value(post.title, 'Bootstrap 3, Template, Theme, Responsive, Corporate, Business', 'Free Responsive Corporate Template') | safe }}
+    {{ getPlugin('facebook', 'head_tag', {url: url, fb_share_type: 'article', fb_share_image: post.image, fb_share_description: post.intro_text }) | async | safe }}
+{% endblock %}
+
+{% block content %}
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>
+                        {{ post.title }}
+                    </h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/blog/posts">Blog</a>
+                        </li>
+                        <li class="active">{{ post.title }}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--container start-->
+    <div class="container">
+
+        <div class="row">
+
+            <!--blog start-->
+            <div class="col-lg-9">
+                <div class="blog-item">
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2">
+                            <div class="date-wrap">
+                                <span class="date">
+                                    {{ post.published_at | moment("DD") }}
+                                </span>
+                                <span class="month">
+                                    {{ post.published_at | moment("MMMM") }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-10 col-sm-10">
+
+                            {% if post.image %}
+                                <div class="blog-img gs">
+                                    <img src="{{ post.image }}" alt=""/>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2 text-right">
+                            {% if categories != '' %}
+                                <div class="author">
+                                    Categories
+                                </div>
+                                <ul class="list-unstyled">
+                                    {% for category in categories %}
+                                        <li>
+                                            <a href="/blog/posts/categories/{{ category.alias }}/{{ category.id }}">
+                                                <em>
+                                                    {{ category.name }}
+                                                </em>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+
+                        <div class="col-lg-10 col-sm-10">
+                            <h1>
+                                <a href="#">
+                                    {{ post.title }}
+                                </a>
+                            </h1>
+
+                            <p>{{ post.full_text | safe }}</p>
+
+                            {{ getSidebar('bottom-post') | async | safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="blog-side-item">
+                    {{ getSidebar('right-sidebar') | async | safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

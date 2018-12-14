@@ -1,0 +1,134 @@
+{% extends '_layout.' + getConfig('viewExtension') %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <form id="edit-form" method="post">
+                {{ toolbar | safe }}
+
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-9 col-sm-9">
+                                <div class="form-group">
+                                    <label for="CommandKey">Mã<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="CommandKey" id="CommandKey"
+                                           value="{{ command.CommandKey }}" autocomplete="off" required="required"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Text">Tên<span class="required">*</span></label>
+                                    <input type="text" class="form-control" name="Text" id="Text"
+                                           value="{{ command.Text }}" autocomplete="off" required="required"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Text_English">Tên Tiếng Anh</label>
+                                    <input type="text" class="form-control" name="Text_English" id="Text_English"
+                                           value="{{ command.Text_English }}" autocomplete="off"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Alias">Alias</label>
+                                    <input type="text" class="form-control" name="Alias" id="Alias"
+                                           value="{{ command.Alias }}" autocomplete="off"/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3">
+                                <div class="form-group">
+                                    <label for="id_commands">{{ __('m_blog_backend_views_form_category') }}</label>
+
+                                    <select name="id_commands" id="id_commands"
+                                            class="form-control">
+                                        {% for cat in parent_commands %}
+                                            <option value="{{ cat.Id }}">{{ cat.CommandKey }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                    <input type="hidden" name="ParentId" id="ParentId"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="id_documents">{{ __('m_blog_backend_views_form_category') }}</label>
+
+                                    <select name="id_documents" id="id_documents"
+                                            class="form-control">
+                                        {% for doc in document %}
+                                            <option value="{{ doc.Id }}">{{ doc.Title }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                    <input type="hidden" name="DocumentId" id="DocumentId"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block jsExtends %}
+    {% include '_editorScript.' + getConfig('viewExtension') %}
+
+    <script>
+        var editForm = $('#edit-form');
+
+        $(function () {
+            /* BEGIN init select2 */
+            var select2 = $('#id_commands');
+            select2.select2({
+                placeholder: "{{ __('m_blog_backend_views_form_category_placeholder' ) }}",
+                maximumSelectionLength: 1,
+                multiple: true,
+                templateSelection: function (option) {
+                    var text = $(option.element).text().trim();
+                    text = text.replace(/^[—]+/, '');
+                    return text;
+                }
+            });
+
+            {% if command.ParentId %}
+                var command_id = '{{ command.ParentId }}';
+                select2.val(command_id).trigger('change');
+            {% else %}
+                select2.val(-1).trigger('change');
+            {% endif %}
+
+            var select2_document = $('#id_documents');
+            select2_document.select2({
+                placeholder: "{{ __('m_blog_backend_views_form_category_placeholder' ) }}",
+                maximumSelectionLength: 1,
+                multiple: true,
+                templateSelection: function (option) {
+                    var text = $(option.element).text().trim();
+                    text = text.replace(/^[—]+/, '');
+                    return text;
+                }
+            });
+
+            {% if command.DocumentId %}
+                var doc_id = '{{ command.DocumentId }}'
+                select2_document.val(doc_id).trigger('change');
+            {% else %}
+                select2_document.val(-1).trigger('change');
+            {% endif %}
+
+            editForm.submit(function () {
+                var listId = $('#id_commands').val();
+                var listDoc = $('#id_documents').val();
+                if (listId) {
+                    $('#ParentId').val(listId);
+                };
+
+                if (listDoc){
+                    $('#DocumentId').val(listDoc);
+                };
+            });
+            /* END init select2 */
+        });
+    </script>
+{% endblock %}
